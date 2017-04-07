@@ -41,6 +41,10 @@ public class MainController {
 
                 if(mCurrentPlayer.getFrame(i).getRollOne() != -1) {
                     mMainActivity.setFrameAndTry(mCurrentPlayer.getFrame(i).getSecondTryPinCountString(), i + 1, 2);
+
+                    if(mCurrentPlayer.getFrame(i).getRollThree() != -1) {
+                        mMainActivity.setFrameAndTry(mCurrentPlayer.getFrame(i).getSecondTryPinCountString(), i + 1, 3);
+                    }
                 }
             }
 
@@ -58,21 +62,33 @@ public class MainController {
         for (int i = 0; i < MAX_FRAMES; i++) {
             mMainActivity.setFrameAndTry(mCurrentPlayer.getFrame(i).getFirstTryPinCountString(), i + 1, 1);
             mMainActivity.setFrameAndTry(mCurrentPlayer.getFrame(i).getSecondTryPinCountString(), i + 1, 2);
+            if(i == MAX_FRAMES - 1) {
+                mMainActivity.setFrameAndTry(mCurrentPlayer.getFrame(i).getSecondTryPinCountString(), i + 1, 3);
+            }
             mMainActivity.setFrameTotal("", i + 1);
         }
     }
 
     public void bowledPinsDown(int pins) {
-        mCurrentPlayer.getCurrentFrame().addPinsDown(pins);
+        mCurrentPlayer.getCurrentFrame().addPinsDown(pins); // TODO math in here
+        // final frame
+        if(mCurrentPlayer.getCurrentFrameIndex() == MAX_FRAMES - 1 ) {
+            if((!mCurrentPlayer.getCurrentFrame().hasBowledSecondTry() && pins == 10) ||
+                    (mCurrentPlayer.getCurrentFrame().hasBowledSecondTry() && mCurrentPlayer.getCurrentFrame().getFirstTryPinCount() + pins == 10)) {
+                mCurrentPlayer.getCurrentFrame().enableBonusShot();
+            }
 
-        if(mCurrentPlayer.getCurrentFrame().hasBowledSecondTry() || pins == 10) {
-            if(mCurrentPlayer.getCurrentFrameIndex() == MAX_FRAMES - 1) {
+            if((mCurrentPlayer.getCurrentFrame().hasBowledSecondTry() && !mCurrentPlayer.getCurrentFrame().isBonusEnabled()) ||
+                    (mCurrentPlayer.getCurrentFrame().hasBowledSecondTry() && mCurrentPlayer.getCurrentFrame().hasBowledBonusTry())) {
                 mMainActivity.showScore(mScoreCalc.getPlayerTotalScore(mCurrentPlayer));
-            } else {
+            }
+        } else {
+            // most frames
+            if(mCurrentPlayer.getCurrentFrame().hasBowledSecondTry() || pins == 10) {
                 mCurrentPlayer.moveToNextFrame();
             }
-        }
 
+        }
         updateScoreCard();
     }
 }

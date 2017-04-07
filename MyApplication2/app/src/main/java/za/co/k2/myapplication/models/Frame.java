@@ -6,10 +6,14 @@ package za.co.k2.myapplication.models;
 public class Frame {
     int rollOne;
     int rollTwo;
+    int rollThree;
+    boolean rollThreeEnabled = false;
 
     public Frame() {
         rollOne = -1;
         rollTwo = -1;
+        rollThree = -1;
+        rollThreeEnabled = false;
     }
 
     public int getRollOne() {
@@ -18,6 +22,10 @@ public class Frame {
 
     public int getRollTwo() {
         return rollTwo;
+    }
+
+    public int getRollThree() {
+        return rollThree;
     }
 
     public String getFirstTryPinCountString() {
@@ -31,7 +39,7 @@ public class Frame {
     private String scoreStringCheck(int input, int tryNumber) {
         if (input == 0) {
             return "-";
-        } else if (tryNumber == 1 && input == 10) {
+        } else if ((tryNumber == 1 && input == 10) || (isBonusEnabled() && input == 10)) {
             return "X";
         } else if ((tryNumber == 2 && input == 10) || (tryNumber == 2 && sumOfTries() == 10 && getFirstTryPinCount() != 10)) {
             return "/";
@@ -56,6 +64,13 @@ public class Frame {
         return rollTwo;
     }
 
+    public int getThirdTryPinCount() {
+        if(rollThree == -1) {
+            return 0;
+        }
+        return rollThree;
+    }
+
     public int sumOfTries() {
         return getFirstTryPinCount() + getSecondTryPinCount();
     }
@@ -64,10 +79,14 @@ public class Frame {
         if(rollOne == -1) {
             rollOne = pinAmount;
         } else {
-            if (getRemainingPinCount() < pinAmount) {
-                rollTwo = getRemainingPinCount();
+            if(rollTwo == -1) {
+                if (getRemainingPinCount() < pinAmount && !isBonusEnabled()) {
+                    rollTwo = getRemainingPinCount();
+                } else {
+                    rollTwo = pinAmount;
+                }
             } else {
-                rollTwo = pinAmount;
+                rollThree = pinAmount;
             }
         }
     }
@@ -76,7 +95,22 @@ public class Frame {
         return rollTwo != -1;
     }
 
+    public boolean hasBowledBonusTry() {
+        return rollThree != -1;
+    }
+
     public int getRemainingPinCount() {
         return 10 -  sumOfTries();
     }
+
+    public void enableBonusShot() {
+        rollThreeEnabled = true;
+    }
+
+    public boolean isBonusEnabled() {
+        return rollThreeEnabled;
+    }
+
+
 }
+

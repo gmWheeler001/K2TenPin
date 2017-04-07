@@ -20,6 +20,15 @@ public class ScoreCalc {
 
     public int getScoreForFrame(Player player, int frameIndex) {
         Frame currentFrame = player.getFrame(frameIndex);
+        if(frameIndex == 9) {
+            if(isStrike(currentFrame)) {
+                return 10 + currentFrame.getSecondTryPinCount() + currentFrame.getThirdTryPinCount();
+            } else if (isSpare(currentFrame)) {
+                return 10 + currentFrame.getThirdTryPinCount();
+            } else {
+                return player.getFrame(frameIndex).sumOfTries();
+            }
+        }
         if(isStrike(currentFrame)) {
             return 10 + strikeBonus(player, frameIndex);
         } else if(isSpare(currentFrame)) {
