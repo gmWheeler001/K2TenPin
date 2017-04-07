@@ -8,19 +8,41 @@ public class Frame {
     int rollTwo;
 
     public Frame() {
-        rollOne = 0;
-        rollTwo = 0;
+        rollOne = -1;
+        rollTwo = -1;
     }
 
     public int getFirstTryPinCount() {
+        if(rollOne == -1) {
+            return 0;
+        }
         return rollOne;
     }
 
     public int getSecondTryPinCount() {
+        if(rollTwo == -1) {
+            return 0;
+        }
         return rollTwo;
     }
 
     public int sumOfTries() {
-        return rollOne + rollTwo;
+        return getFirstTryPinCount() + getSecondTryPinCount();
+    }
+
+    public void addPinsDown(int pinAmount) {
+        if(rollOne == -1) {
+            rollOne = pinAmount;
+        } else {
+            rollTwo = pinAmount;
+        }
+    }
+
+    public boolean hasBowledSecondTry() {
+        return rollTwo != -1;
+    }
+
+    public int getRemainingPinCount() {
+        return 10 -  sumOfTries();
     }
 }
