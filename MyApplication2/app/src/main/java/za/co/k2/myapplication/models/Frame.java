@@ -12,6 +12,36 @@ public class Frame {
         rollTwo = -1;
     }
 
+    public int getRollOne() {
+        return rollOne;
+    }
+
+    public int getRollTwo() {
+        return rollTwo;
+    }
+
+    public String getFirstTryPinCountString() {
+        return scoreStringCheck(getRollOne(), 1);
+    }
+
+    public String getSecondTryPinCountString() {
+        return scoreStringCheck(getRollTwo(), 2);
+    }
+
+    private String scoreStringCheck(int input, int tryNumber) {
+        if (input == 0) {
+            return "-";
+        } else if (tryNumber == 1 && input == 10) {
+            return "X";
+        } else if ((tryNumber == 2 && input == 10) || (tryNumber == 2 && sumOfTries() == 10)) {
+            return "/";
+        } else if (input == -1) {
+            return "";
+        } else {
+            return input + "";
+        }
+    }
+
     public int getFirstTryPinCount() {
         if(rollOne == -1) {
             return 0;

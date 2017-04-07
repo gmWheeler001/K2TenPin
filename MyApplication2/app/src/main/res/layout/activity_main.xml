@@ -30,7 +30,8 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:background="#325475"/>
+                android:background="#325475"
+                android:onClick="bowledOne"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -42,12 +43,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#afafaf"
                     android:gravity="center"/>
                 <TextView
                     android:id="@+id/f1b2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#afafaf"
                     android:gravity="center"/>
             </LinearLayout>
 
@@ -78,7 +81,8 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:background="#325475"/>
+                android:background="#325475"
+                android:onClick="bowledTwo"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -90,12 +94,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#afafaf"
                     android:gravity="center"/>
                 <TextView
                     android:id="@+id/f2b2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#afafaf"
                     android:gravity="center"/>
             </LinearLayout>
 
@@ -126,7 +132,8 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:background="#325475"/>
+                android:background="#325475"
+                android:onClick="bowledThree"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -138,12 +145,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#afafaf"
                     android:gravity="center"/>
                 <TextView
                     android:id="@+id/f3b2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#afafaf"
                     android:gravity="center"/>
             </LinearLayout>
 
@@ -174,7 +183,8 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:background="#325475"/>
+                android:background="#325475"
+                android:onClick="bowledFour"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -186,12 +196,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#afafaf"
                     android:gravity="center"/>
                 <TextView
                     android:id="@+id/f4b2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#afafaf"
                     android:gravity="center"/>
             </LinearLayout>
 
@@ -222,7 +234,8 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:background="#325475"/>
+                android:background="#325475"
+                android:onClick="bowledFive"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -234,12 +247,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#afafaf"
                     android:gravity="center" />
                 <TextView
                     android:id="@+id/f5b2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#afafaf"
                     android:gravity="center" />
             </LinearLayout>
 
@@ -269,7 +284,8 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:background="#325475"/>
+                android:background="#325475"
+                android:onClick="bowledSix"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -281,6 +297,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#afafaf"
                     android:gravity="center"
                     />
                 <TextView
@@ -288,6 +305,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#afafaf"
                     android:gravity="center"
                     />
             </LinearLayout>
@@ -320,7 +338,8 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:background="#325475"/>
+                android:background="#325475"
+                android:onClick="bowledSeven"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -332,6 +351,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#afafaf"
                     android:gravity="center"
                     />
                 <TextView
@@ -339,6 +359,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#afafaf"
                     android:gravity="center"
                     />
             </LinearLayout>
@@ -371,7 +392,8 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:background="#325475"/>
+                android:background="#325475"
+                android:onClick="bowledEight"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -384,6 +406,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:textColor="#afafaf"
                     />
                 <TextView
                     android:id="@+id/f8b2"
@@ -391,6 +414,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:textColor="#afafaf"
                     />
             </LinearLayout>
 
@@ -422,7 +446,8 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:background="#325475"/>
+                android:background="#325475"
+                android:onClick="bowledNine"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -434,6 +459,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#afafaf"
                     android:gravity="center"
                     />
                 <TextView
@@ -441,6 +467,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#afafaf"
                     android:gravity="center"
                     />
             </LinearLayout>
@@ -471,7 +498,8 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:background="#325475"/>
+                android:background="#325475"
+                android:onClick="bowledTen"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -483,6 +511,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#afafaf"
                     android:gravity="center"
                     />
                 <TextView
@@ -490,6 +519,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#afafaf"
                     android:gravity="center"
                     />
 
@@ -498,6 +528,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="#afafaf"
                     android:gravity="center"/>
             </LinearLayout>
 
@@ -660,6 +691,7 @@
         android:onClick="resetClicked"/>
 
     <TextView
+        android:id="@+id/totalPoints"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0 Points"

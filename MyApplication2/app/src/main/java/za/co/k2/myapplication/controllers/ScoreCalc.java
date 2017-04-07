@@ -12,17 +12,21 @@ public class ScoreCalc {
         int score = 0;
 
         for (int frameIndex = 0; frameIndex < player.getFrameCount(); frameIndex++) {
-            Frame currentFrame = player.getFrame(frameIndex);
-            if(isStrike(currentFrame)) {
-                score += 10 + strikeBonus(player, frameIndex);
-            } else if(isSpare(currentFrame)) {
-                score += 10 + spareBonus(player, frameIndex);
-            } else {
-                score += player.getFrame(frameIndex).sumOfTries();
-            }
+            score += getScoreForFrame(player, frameIndex);
         }
 
         return score;
+    }
+
+    public int getScoreForFrame(Player player, int frameIndex) {
+        Frame currentFrame = player.getFrame(frameIndex);
+        if(isStrike(currentFrame)) {
+            return 10 + strikeBonus(player, frameIndex);
+        } else if(isSpare(currentFrame)) {
+            return 10 + spareBonus(player, frameIndex);
+        } else {
+            return player.getFrame(frameIndex).sumOfTries();
+        }
     }
 
     private boolean isStrike(Frame frame) {
