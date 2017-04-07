@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/lane"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/blank" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-20dp">
+
+        <ImageView
+            android:id="@+id/pinSeven"
+            android:layout_width="28dp"
+            android:layout_height="58dp"
+            android:src="@drawable/pin"
+            android:layout_marginTop="0dp"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/blank"/>
+
+        <ImageView
+            android:id="@+id/pinEight"
+            android:layout_width="28dp"
+            android:layout_height="58dp"
+            android:src="@drawable/pin"
+            android:layout_marginTop="0dp"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/blank"/>
+
+        <ImageView
+            android:id="@+id/pinNine"
+            android:layout_width="28dp"
+            android:layout_height="58dp"
+            android:src="@drawable/pin"
+            android:layout_marginTop="0dp"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/blank"/>
+
+        <ImageView
+            android:id="@+id/pinTen"
+            android:layout_width="28dp"
+            android:layout_height="58dp"
+            android:src="@drawable/pin"
+            android:layout_marginTop="0dp"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/blank"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-10dp">
+
+        <ImageView
+            android:id="@+id/pinFour"
+            android:layout_width="30dp"
+            android:layout_height="60dp"
+            android:src="@drawable/pin"
+            android:layout_marginTop="0dp"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/blank"/>
+
+        <ImageView
+            android:id="@+id/pinFive"
+            android:layout_width="30dp"
+            android:layout_height="60dp"
+            android:src="@drawable/pin"
+            android:layout_marginTop="0dp"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/blank"/>
+
+        <ImageView
+            android:id="@+id/pinSix"
+            android:layout_width="30dp"
+            android:layout_height="60dp"
+            android:src="@drawable/pin"
+            android:layout_marginTop="0dp"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/blank"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp">
+
+        <ImageView
+            android:id="@+id/pinTwo"
+            android:layout_width="32dp"
+            android:layout_height="62dp"
+            android:src="@drawable/pin"
+            android:layout_marginTop="0dp"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/blank"/>
+
+        <ImageView
+            android:id="@+id/pinThree"
+            android:layout_width="32dp"
+            android:layout_height="62dp"
+            android:src="@drawable/pin"
+            android:layout_marginTop="0dp"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/blank"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/pinOne"
+        android:layout_width="34dp"
+        android:layout_height="64dp"
+        android:src="@drawable/pin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:scaleType="centerInside"
+        android:contentDescription="@string/blank"/>
+
+</RelativeLayout>

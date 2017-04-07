@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_alignParentBottom="false"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:baselineAligned="false">
 
         <!--scoring f1-->
         <LinearLayout
@@ -21,12 +22,12 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:paddingEnd="1dp"
-            android:paddingRight="1dp">
+            android:paddingStart="0dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1"
+                android:text="@string/_1"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:gravity="center"
@@ -79,7 +80,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2"
+                android:text="@string/_2"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:gravity="center"
@@ -132,7 +133,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3"
+                android:text="@string/_3"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:gravity="center"
@@ -185,7 +186,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="4"
+                android:text="@string/_4"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:gravity="center"
@@ -238,7 +239,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="5"
+                android:text="@string/_5"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:gravity="center"
@@ -290,7 +291,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="6"
+                android:text="@string/_6"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:gravity="center"
@@ -326,8 +327,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textStyle="bold"
-                android:textColor="#afafaf"/>>
-
+                android:textColor="#afafaf"/>
 
         </LinearLayout>
 
@@ -345,7 +345,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="7"
+                android:text="@string/_7"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:gravity="center"
@@ -400,7 +400,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="8"
+                android:text="@string/_8"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:gravity="center"
@@ -455,7 +455,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="9"
+                android:text="@string/_9"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:gravity="center"
@@ -502,13 +502,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:paddingLeft="1dp"
-            android:paddingStart="1dp">
+            android:paddingStart="1dp"
+            android:paddingEnd="0dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="10"
+                android:text="@string/_10"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:gravity="center"
@@ -526,8 +526,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textColor="#afafaf"
-                    android:gravity="center"
-                    />
+                    android:gravity="center"/>
+
                 <TextView
                     android:id="@+id/f10b2"
                     android:layout_width="0dp"
@@ -557,7 +557,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <RelativeLayout
+    <include layout="@layout/ally"
         android:layout_below="@+id/scoreCardHolder"
         android:layout_above="@+id/buttonHolder"
         android:layout_width="match_parent"
@@ -565,120 +565,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/lane"
-            android:scaleType="fitXY"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="-20dp">
-
-            <ImageView
-                android:id="@+id/pinSeven"
-                android:layout_width="28dp"
-                android:layout_height="58dp"
-                android:src="@drawable/pin"
-                android:layout_marginTop="0dp"
-                android:scaleType="centerInside"/>
-
-            <ImageView
-                android:id="@+id/pinEight"
-                android:layout_width="28dp"
-                android:layout_height="58dp"
-                android:src="@drawable/pin"
-                android:layout_marginTop="0dp"
-                android:scaleType="centerInside"/>
-
-            <ImageView
-                android:id="@+id/pinNine"
-                android:layout_width="28dp"
-                android:layout_height="58dp"
-                android:src="@drawable/pin"
-                android:layout_marginTop="0dp"
-                android:scaleType="centerInside"/>
-
-            <ImageView
-                android:id="@+id/pinTen"
-                android:layout_width="28dp"
-                android:layout_height="58dp"
-                android:src="@drawable/pin"
-                android:layout_marginTop="0dp"
-                android:scaleType="centerInside"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="-10dp">
-
-            <ImageView
-                android:id="@+id/pinFour"
-                android:layout_width="30dp"
-                android:layout_height="60dp"
-                android:src="@drawable/pin"
-                android:layout_marginTop="0dp"
-                android:scaleType="centerInside"/>
-
-            <ImageView
-                android:id="@+id/pinFive"
-                android:layout_width="30dp"
-                android:layout_height="60dp"
-                android:src="@drawable/pin"
-                android:layout_marginTop="0dp"
-                android:scaleType="centerInside"/>
-
-            <ImageView
-                android:id="@+id/pinSix"
-                android:layout_width="30dp"
-                android:layout_height="60dp"
-                android:src="@drawable/pin"
-                android:layout_marginTop="0dp"
-                android:scaleType="centerInside"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="2dp">
-
-            <ImageView
-                android:id="@+id/pinTwo"
-                android:layout_width="32dp"
-                android:layout_height="62dp"
-                android:src="@drawable/pin"
-                android:layout_marginTop="0dp"
-                android:scaleType="centerInside"/>
-
-            <ImageView
-                android:id="@+id/pinThree"
-                android:layout_width="32dp"
-                android:layout_height="62dp"
-                android:src="@drawable/pin"
-                android:layout_marginTop="0dp"
-                android:scaleType="centerInside"/>
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/pinOne"
-            android:layout_width="34dp"
-            android:layout_height="64dp"
-            android:src="@drawable/pin"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="14dp"
-            android:scaleType="centerInside"/>
-
-    </RelativeLayout>
+        android:layout_marginRight="16dp"/>
 
     <Space
         android:id="@+id/buttonHolder"
@@ -695,7 +582,8 @@
         android:layout_alignParentBottom="true"
         android:scaleType="centerInside"
         android:layout_marginBottom="8dp"
-        android:onClick="bowlBall"/>
+        android:onClick="bowlBall"
+        android:contentDescription="@string/blank" />
 
     <ImageView
         android:layout_width="50dp"
@@ -704,26 +592,27 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="8dp"
-        android:onClick="resetClicked"/>
+        android:onClick="resetClicked"
+        android:contentDescription="@string/blank" />
 
     <TextView
         android:id="@+id/totalPoints"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0 Points"
         android:textColor="#ffffff"
         android:textStyle="bold"
         android:textSize="20sp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_margin="8dp"/>
-
+        android:layout_alignParentStart="true"
+        android:layout_margin="8dp"
+        tools:ignore="RelativeOverlap" />
 
     <TextView
         android:id="@+id/dimmer"
+        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#bf000000"
+        android:background="#af000000"
         android:visibility="gone"
         android:onClick="doNothing"/>
 
@@ -732,7 +621,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        android:src="@drawable/finished"/>
+        android:src="@drawable/finished"
+        android:contentDescription="@string/blank" />
 
     <TextView
         android:id="@+id/finalScore"
@@ -742,15 +632,14 @@
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="18sp"
-        android:visibility="gone"
-        android:text="Congradulations!!\n xxx Points"/>
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/playAgainButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:text="Play Again?"
+        android:text="@string/play_again"
         android:layout_below="@id/finalScore"
         android:textColor="#34af55"
         android:layout_centerHorizontal="true"

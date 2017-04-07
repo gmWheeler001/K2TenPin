@@ -5,6 +5,7 @@ import za.co.k2.myapplication.models.Player;
 
 /**
  * Created by garrick.w on 2017/04/07.
+ * does all the work calculating score according to rules found online.
  */
 public class ScoreCalc {
 
@@ -26,7 +27,7 @@ public class ScoreCalc {
             } else if (isSpare(currentFrame)) {
                 return 10 + currentFrame.getThirdTryPinCount();
             } else {
-                return player.getFrame(frameIndex).sumOfTries();
+                return currentFrame.sumOfTries();
             }
         }
         if(isStrike(currentFrame)) {
@@ -34,7 +35,7 @@ public class ScoreCalc {
         } else if(isSpare(currentFrame)) {
             return 10 + spareBonus(player, frameIndex);
         } else {
-            return player.getFrame(frameIndex).sumOfTries();
+            return currentFrame.sumOfTries();
         }
     }
 

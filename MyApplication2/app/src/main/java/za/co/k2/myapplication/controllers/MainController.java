@@ -1,8 +1,5 @@
 package za.co.k2.myapplication.controllers;
 
-import android.app.Activity;
-import android.util.Log;
-
 import java.util.concurrent.ThreadLocalRandom;
 
 import za.co.k2.myapplication.MainActivity;
@@ -11,6 +8,7 @@ import za.co.k2.myapplication.models.Player;
 
 /**
  * Created by garrick.w on 2017/04/07.
+ * Application used to play bowling.. virtually
  */
 public class MainController {
     private final int MAX_FRAMES = 10;
@@ -28,6 +26,7 @@ public class MainController {
         bowledPinsDown(getPinsDownAmount(mCurrentPlayer.getCurrentFrame()));
     }
 
+    // used for random generation to be replace if better user interaction is added to the application
     private int getPinsDownAmount(Frame currentFrame) {
         return ThreadLocalRandom.current().nextInt(0, currentFrame.getRemainingPinCount() + 1);
     }
@@ -36,19 +35,20 @@ public class MainController {
         mMainActivity.updateTotalScore(mScoreCalc.getPlayerTotalScore(mCurrentPlayer));
 
         for (int i = 0; i < MAX_FRAMES; i++) {
-            if(mCurrentPlayer.getFrame(i).getRollOne() != -1) {
-                mMainActivity.setFrameAndTry(mCurrentPlayer.getFrame(i).getFirstTryPinCountString(), i + 1, 1);
+            Frame workingFrame = mCurrentPlayer.getFrame(i);
+            if(workingFrame.getRollOne() != -1) {
+                mMainActivity.setFrameAndTry(workingFrame.getFirstTryPinCountString(), i + 1, 1);
 
-                if(mCurrentPlayer.getFrame(i).getRollOne() != -1) {
-                    mMainActivity.setFrameAndTry(mCurrentPlayer.getFrame(i).getSecondTryPinCountString(), i + 1, 2);
+                if(workingFrame.getRollOne() != -1) {
+                    mMainActivity.setFrameAndTry(workingFrame.getSecondTryPinCountString(), i + 1, 2);
 
-                    if(mCurrentPlayer.getFrame(i).getRollThree() != -1) {
-                        mMainActivity.setFrameAndTry(mCurrentPlayer.getFrame(i).getSecondTryPinCountString(), i + 1, 3);
+                    if(workingFrame.getRollThree() != -1) {
+                        mMainActivity.setFrameAndTry(workingFrame.getThirdTryPinCountString(), i + 1, 3);
                     }
                 }
             }
 
-            if(mCurrentPlayer.getFrame(i).getRollOne() != -1) {
+            if(workingFrame.getRollOne() != -1) {
                 int frameScore = mScoreCalc.getScoreForFrame(mCurrentPlayer, i);
                 mMainActivity.setFrameTotal(frameScore + "", i + 1);
             }
@@ -60,31 +60,32 @@ public class MainController {
         updateScoreCard();
 
         for (int i = 0; i < MAX_FRAMES; i++) {
-            mMainActivity.setFrameAndTry(mCurrentPlayer.getFrame(i).getFirstTryPinCountString(), i + 1, 1);
-            mMainActivity.setFrameAndTry(mCurrentPlayer.getFrame(i).getSecondTryPinCountString(), i + 1, 2);
+            mMainActivity.setFrameAndTry("", i + 1, 1);
+            mMainActivity.setFrameAndTry("", i + 1, 2);
             if(i == MAX_FRAMES - 1) {
-                mMainActivity.setFrameAndTry(mCurrentPlayer.getFrame(i).getSecondTryPinCountString(), i + 1, 3);
+                mMainActivity.setFrameAndTry("", i + 1, 3);
             }
             mMainActivity.setFrameTotal("", i + 1);
         }
     }
 
     public void bowledPinsDown(int pins) {
-        mCurrentPlayer.getCurrentFrame().addPinsDown(pins); // TODO math in here
+        Frame workingFrame = mCurrentPlayer.getCurrentFrame();
+        workingFrame.addPinsDown(pins);
         // final frame
         if(mCurrentPlayer.getCurrentFrameIndex() == MAX_FRAMES - 1 ) {
-            if((!mCurrentPlayer.getCurrentFrame().hasBowledSecondTry() && pins == 10) ||
-                    (mCurrentPlayer.getCurrentFrame().hasBowledSecondTry() && mCurrentPlayer.getCurrentFrame().getFirstTryPinCount() + pins == 10)) {
-                mCurrentPlayer.getCurrentFrame().enableBonusShot();
+            if((!workingFrame.hasBowledSecondTry() && pins == 10) ||
+                    (workingFrame.hasBowledSecondTry() && workingFrame.getFirstTryPinCount() + pins >= 10)) {
+                workingFrame.enableBonusShot();
             }
 
-            if((mCurrentPlayer.getCurrentFrame().hasBowledSecondTry() && !mCurrentPlayer.getCurrentFrame().isBonusEnabled()) ||
-                    (mCurrentPlayer.getCurrentFrame().hasBowledSecondTry() && mCurrentPlayer.getCurrentFrame().hasBowledBonusTry())) {
+            if((workingFrame.hasBowledSecondTry() && !workingFrame.isBonusEnabled()) ||
+                    (workingFrame.hasBowledSecondTry() && workingFrame.hasBowledBonusTry())) {
                 mMainActivity.showScore(mScoreCalc.getPlayerTotalScore(mCurrentPlayer));
             }
         } else {
             // most frames
-            if(mCurrentPlayer.getCurrentFrame().hasBowledSecondTry() || pins == 10) {
+            if(workingFrame.hasBowledSecondTry() || pins == 10) {
                 mCurrentPlayer.moveToNextFrame();
             }
 

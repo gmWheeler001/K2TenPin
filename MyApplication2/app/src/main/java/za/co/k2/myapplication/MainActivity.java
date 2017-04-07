@@ -1,16 +1,13 @@
 package za.co.k2.myapplication;
 
-import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import java.lang.reflect.Field;
+import java.util.Locale;
 
 import za.co.k2.myapplication.controllers.MainController;
-import za.co.k2.myapplication.models.Player;
 
 public class MainActivity extends AppCompatActivity {
     private MainController mController;
@@ -36,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void updateTotalScore(int pointCount) {
-        totalPoints.setText(pointCount + " Points");
+        totalPoints.setText(String.format(Locale.US, "%d Points", pointCount));
     }
 
     public void setFrameAndTry(String pinCountString, int frameNumber, int tryNumber) {
@@ -115,8 +112,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.finalScore).setVisibility(View.VISIBLE);
         findViewById(R.id.playAgainButton).setVisibility(View.VISIBLE);
 
-
-        ((TextView)findViewById(R.id.finalScore)).setText("Congratulations!!\n" + playerTotalScore + " Points");
+        ((TextView)findViewById(R.id.finalScore)).setText(String.format(Locale.US, "Congratulations!!\n%d Points", playerTotalScore));
     }
 
     public void doNothing(View view) {

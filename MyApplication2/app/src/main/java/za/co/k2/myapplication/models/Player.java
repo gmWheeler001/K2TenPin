@@ -2,14 +2,15 @@ package za.co.k2.myapplication.models;
 
 /**
  * Created by garrick.w on 2017/04/07.
+ * Object of the player, this will make multilayer easy going forward
  */
 public class Player {
     private int currentFrame;
     private Frame[] frames;
 
-    public Player(int maxframes) {
-        this.frames = new Frame[maxframes];
-        for (int i = 0; i < maxframes; i++) {
+    public Player(int maxFrames) {
+        this.frames = new Frame[maxFrames];
+        for (int i = 0; i < maxFrames; i++) {
             this.frames[i] = new Frame();
         }
 

@@ -2,6 +2,7 @@ package za.co.k2.myapplication.models;
 
 /**
  * Created by garrick.w on 2017/04/07.
+ * used to store each frame of the game, making scoring easier
  */
 public class Frame {
     int rollOne;
@@ -34,6 +35,10 @@ public class Frame {
 
     public String getSecondTryPinCountString() {
         return scoreStringCheck(getRollTwo(), 2);
+    }
+
+    public String getThirdTryPinCountString() {
+        return scoreStringCheck(getRollThree(), 1);
     }
 
     private String scoreStringCheck(int input, int tryNumber) {
