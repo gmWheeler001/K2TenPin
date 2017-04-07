@@ -66,7 +66,11 @@ public class MainController {
         mCurrentPlayer.getCurrentFrame().addPinsDown(pins);
 
         if(mCurrentPlayer.getCurrentFrame().hasBowledSecondTry() || pins == 10) {
-            mCurrentPlayer.moveToNextFrame();
+            if(mCurrentPlayer.getCurrentFrameIndex() == MAX_FRAMES - 1) {
+                mMainActivity.showScore(mScoreCalc.getPlayerTotalScore(mCurrentPlayer));
+            } else {
+                mCurrentPlayer.moveToNextFrame();
+            }
         }
 
         updateScoreCard();

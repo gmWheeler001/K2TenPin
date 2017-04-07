@@ -33,7 +33,7 @@ public class Frame {
             return "-";
         } else if (tryNumber == 1 && input == 10) {
             return "X";
-        } else if ((tryNumber == 2 && input == 10) || (tryNumber == 2 && sumOfTries() == 10)) {
+        } else if ((tryNumber == 2 && input == 10) || (tryNumber == 2 && sumOfTries() == 10 && getFirstTryPinCount() != 10)) {
             return "/";
         } else if (input == -1) {
             return "";
@@ -64,7 +64,11 @@ public class Frame {
         if(rollOne == -1) {
             rollOne = pinAmount;
         } else {
-            rollTwo = pinAmount;
+            if (getRemainingPinCount() < pinAmount) {
+                rollTwo = getRemainingPinCount();
+            } else {
+                rollTwo = pinAmount;
+            }
         }
     }
 

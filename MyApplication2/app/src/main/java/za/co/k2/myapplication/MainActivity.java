@@ -108,4 +108,27 @@ public class MainActivity extends AppCompatActivity {
             mController.bowledPinsDown(10);
         }
     }
+
+    public void showScore(int playerTotalScore) {
+        findViewById(R.id.dimmer).setVisibility(View.VISIBLE);
+        findViewById(R.id.boom).setVisibility(View.VISIBLE);
+        findViewById(R.id.finalScore).setVisibility(View.VISIBLE);
+        findViewById(R.id.playAgainButton).setVisibility(View.VISIBLE);
+
+
+        ((TextView)findViewById(R.id.finalScore)).setText("Congratulations!!\n" + playerTotalScore + " Points");
+    }
+
+    public void doNothing(View view) {
+        // doing nothing
+    }
+
+    public void playAgain(View view) {
+        findViewById(R.id.dimmer).setVisibility(View.INVISIBLE);
+        findViewById(R.id.boom).setVisibility(View.INVISIBLE);
+        findViewById(R.id.finalScore).setVisibility(View.INVISIBLE);
+        findViewById(R.id.playAgainButton).setVisibility(View.INVISIBLE);
+
+        resetClicked(view);
+    }
 }

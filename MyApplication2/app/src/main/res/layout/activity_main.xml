@@ -58,7 +58,9 @@
                 android:id="@+id/f1total"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#afafaf"/>
 
 
         </LinearLayout>
@@ -109,7 +111,9 @@
                 android:id="@+id/f2total"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#afafaf"/>
 
 
         </LinearLayout>
@@ -160,7 +164,9 @@
                 android:id="@+id/f3total"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#afafaf"/>
 
 
         </LinearLayout>
@@ -211,7 +217,9 @@
                 android:id="@+id/f4total"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#afafaf"/>
 
 
         </LinearLayout>
@@ -262,7 +270,9 @@
                 android:id="@+id/f5total"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#afafaf"/>
 
         </LinearLayout>
 
@@ -315,7 +325,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                />
+                android:textStyle="bold"
+                android:textColor="#afafaf"/>>
 
 
         </LinearLayout>
@@ -369,7 +380,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                />
+                android:textStyle="bold"
+                android:textColor="#afafaf"/>
 
 
         </LinearLayout>
@@ -423,7 +435,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                />
+                android:textStyle="bold"
+                android:textColor="#afafaf"/>
 
 
         </LinearLayout>
@@ -477,7 +490,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                />
+                android:textStyle="bold"
+                android:textColor="#afafaf"/>
 
 
         </LinearLayout>
@@ -536,7 +550,9 @@
                 android:id="@+id/f10total"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center" />
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#afafaf"/>
 
         </LinearLayout>
     </LinearLayout>
@@ -701,5 +717,44 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_margin="8dp"/>
+
+
+    <TextView
+        android:id="@+id/dimmer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#bf000000"
+        android:visibility="gone"
+        android:onClick="doNothing"/>
+
+    <ImageView
+        android:id="@+id/boom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:src="@drawable/finished"/>
+
+    <TextView
+        android:id="@+id/finalScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:text="Congradulations!!\n xxx Points"/>
+
+    <TextView
+        android:id="@+id/playAgainButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Play Again?"
+        android:layout_below="@id/finalScore"
+        android:textColor="#34af55"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:onClick="playAgain"/>
 
 </RelativeLayout>
